@@ -31,11 +31,17 @@ class LoginPresenter: AbstractLoginPresenter {
             switch error {
             case .unregisteredUser: contentView.set(state: .unregisteredUser)
             case .wrongPassword: contentView.set(state: .wrongPassword)
+            case .emptyData: contentView.set(state: .emptyFields)
             }
         }
     }
     
     func authentify(email: String, password: String, completion: (CompletionHandler) -> Void) {
+        guard !email.isEmpty, !password.isEmpty else {
+            completion(.failure(.emptyData))
+            return
+        }
+        
         guard let user = UserRepository.getUser(by: email) else {
             completion(.failure(.unregisteredUser))
             return

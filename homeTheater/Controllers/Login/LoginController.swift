@@ -30,6 +30,7 @@ class LoginController: UIViewController {
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var scrollView: UIScrollView!
     
+    private var lightGray = UIColor.lightGray.withAlphaComponent(0.5)
     private lazy var presenter: AbstractLoginPresenter = {
         return LoginPresenter(contentView: self)
     }()
@@ -60,6 +61,7 @@ class LoginController: UIViewController {
 extension LoginController: UITextFieldDelegate {
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        setBorderColor(for: textField, color: lightGray)
         return true
     }
     
@@ -107,23 +109,29 @@ extension LoginController: LoginContentView {
     func set(state: State) {
         switch state {
         case .default:
-            setBorderColor(for: passwordField, color: .gray)
-            setBorderColor(for: usernameField, color: .gray)
+            setBorderColor(for: passwordField, color: lightGray)
+            setBorderColor(for: usernameField, color: lightGray)
             empty(textField: passwordField)
             empty(textField: usernameField)
             
         case .wrongPassword:
+            setBorderColor(for: usernameField, color: lightGray)
             setBorderColor(for: passwordField, color: .red)
             showAlert(with: "Password didn't match. Please, try again!")
             
         case .unregisteredUser:
             setBorderColor(for: usernameField, color: .red)
+            setBorderColor(for: passwordField, color: lightGray)
             empty(textField: passwordField)
             showAlert(with: "User does not found. Please, try again!")
             
         case .emptyFields:
-            setBorderColor(for: passwordField, color: .red)
-            setBorderColor(for: usernameField, color: .red)
+            if passwordField.text == "" {
+                setBorderColor(for: passwordField, color: .red)
+            }
+            if usernameField.text == "" {
+                setBorderColor(for: usernameField, color: .red)
+            }
             showAlert(with: "Fields cannot be empty! Please, enter email and password!")
         }
     }
@@ -137,6 +145,8 @@ private extension LoginController {
     
     func setBorderColor(for textField: UITextField, color: UIColor) {
         textField.layer.borderColor = color.cgColor
+        textField.layer.cornerRadius = 5
+        textField.layer.borderWidth = 1
     }
     
     func empty(textField: UITextField) {

@@ -11,6 +11,7 @@ import Foundation
 enum LoginError: Error {
     case wrongPassword
     case unregisteredUser
+    case emptyData
 }
 
 protocol AbstractLoginPresenter: class {
