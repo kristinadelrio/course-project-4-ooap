@@ -6,9 +6,11 @@
 //  Copyright © 2019 Kristina Del Rio Albrechet. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct RegistrationRouteModel {
     let title: String
     let isPassword: Bool
+    let placeholder: String
+    let image: UIImage
 }

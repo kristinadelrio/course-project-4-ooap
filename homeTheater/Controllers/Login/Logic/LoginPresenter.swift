@@ -19,19 +19,18 @@ class LoginPresenter: AbstractLoginPresenter {
     }
     
     func gotoRegistration() {
-        contentView.setToNavigation(controllers: ApplicationRoute.get(.registrationFlow))
+        contentView.navigate(to: ApplicationRoute.get(.registration))
     }
     
     func notify(with result: Result<User, LoginError>) {
         switch result {
         case .success(let user):
-            let controllers = ApplicationRoute.get(.homeTheater(user: user))
-            contentView.setToNavigation(controllers: controllers)
+            contentView.navigate(to: ApplicationRoute.get(.homeTheater(user: user)))
         case .failure(let error):
             switch error {
-            case .unregisteredUser: contentView.set(state: .unregisteredUser)
-            case .wrongPassword: contentView.set(state: .wrongPassword)
-            case .emptyData: contentView.set(state: .emptyFields)
+            case .unregisteredUser: contentView.setunregisteredUserState()
+            case .wrongPassword: contentView.setWrongPasswordState()
+            case .emptyData: contentView.setEmptyFieldsState()
             }
         }
     }

@@ -9,19 +9,15 @@
 import UIKit
 
 protocol LoginContentView: class {
-    func set(state: LoginController.State)
-    func setToNavigation(controllers: [UIViewController])
+    func setDefaultState()
+    func setEmptyFieldsState()
+    func setWrongPasswordState()
+    func setunregisteredUserState()
+    func navigate(to controller: UIViewController)
 }
 
 class LoginController: UIViewController {
 
-    enum State {
-        case `default`
-        case emptyFields
-        case wrongPassword
-        case unregisteredUser
-    }
-    
     @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var logInButton: UIButton!
     @IBOutlet weak var registerButton: UIButton!
@@ -39,13 +35,12 @@ class LoginController: UIViewController {
         super.viewDidLoad()
         usernameField.delegate = self
         passwordField.delegate = self
-        set(state: .default)
+        setDefaultState()
         addKeyboardObservers()
     }
     
     deinit {
         NotificationCenter.default.removeObserver(self)
-        
     }
     
     @IBAction func onRegisterDidTap(_ sender: UIButton) {
@@ -61,11 +56,7 @@ class LoginController: UIViewController {
 extension LoginController: UITextFieldDelegate {
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        setBorderColor(for: textField, color: lightGray)
-        return true
-    }
-    
-    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        textField.setBorder()
         return true
     }
     
@@ -106,56 +97,33 @@ extension LoginController {
 
 extension LoginController: LoginContentView {
     
-    func set(state: State) {
-        switch state {
-        case .default:
-            setBorderColor(for: passwordField, color: lightGray)
-            setBorderColor(for: usernameField, color: lightGray)
-            empty(textField: passwordField)
-            empty(textField: usernameField)
-            
-        case .wrongPassword:
-            setBorderColor(for: usernameField, color: lightGray)
-            setBorderColor(for: passwordField, color: .red)
-            showAlert(with: "Password didn't match. Please, try again!")
-            
-        case .unregisteredUser:
-            setBorderColor(for: usernameField, color: .red)
-            setBorderColor(for: passwordField, color: lightGray)
-            empty(textField: passwordField)
-            showAlert(with: "User does not found. Please, try again!")
-            
-        case .emptyFields:
-            if passwordField.text == "" {
-                setBorderColor(for: passwordField, color: .red)
-            }
-            if usernameField.text == "" {
-                setBorderColor(for: usernameField, color: .red)
-            }
-            showAlert(with: "Fields cannot be empty! Please, enter email and password!")
-        }
+    func setDefaultState() {
+        usernameField.setBorder()
+        passwordField.setBorder()
+        usernameField.clear()
+        passwordField.clear()
     }
     
-    func setToNavigation(controllers: [UIViewController]) {
-        navigationController?.setViewControllers(controllers, animated: true)
-    }
-}
-
-private extension LoginController {
-    
-    func setBorderColor(for textField: UITextField, color: UIColor) {
-        textField.layer.borderColor = color.cgColor
-        textField.layer.cornerRadius = 5
-        textField.layer.borderWidth = 1
+    func setWrongPasswordState() {
+        usernameField.setBorder()
+        passwordField.setBorder(with: .red)
+        showAlert(with: "Password didn't match. Please, try again!")
     }
     
-    func empty(textField: UITextField) {
-        textField.text = ""
+    func setunregisteredUserState() {
+        usernameField.setBorder(with: .red)
+        passwordField.setBorder()
+        passwordField.clear()
+        showAlert(with: "User does not found. Please, try again!")
     }
     
-    func showAlert(with message: String) {
-        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-        present(alert, animated: true, completion: nil)
+    func setEmptyFieldsState() {
+        if passwordField.text == "" { passwordField.setBorder(with: .red) }
+        if usernameField.text == "" { usernameField.setBorder(with: .red) }
+        showAlert(with: "Fields cannot be empty! Please, enter email and password!")
+    }
+    
+    func navigate(to controller: UIViewController) {
+        navigationController?.pushViewController(controller, animated: true)
     }
 }

@@ -18,6 +18,10 @@
 		0E3FB885227F2ABF00DB0E73 /* ApplicationRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3FB884227F2ABF00DB0E73 /* ApplicationRoute.swift */; };
 		0E3FB887227F2B0800DB0E73 /* RegistrationRouteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3FB886227F2B0800DB0E73 /* RegistrationRouteModel.swift */; };
 		0E3FB889227F322700DB0E73 /* UsersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3FB888227F322700DB0E73 /* UsersRepository.swift */; };
+		0E3FB88F227F781700DB0E73 /* RegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3FB88E227F781700DB0E73 /* RegisterPresenter.swift */; };
+		0E3FB891227F783E00DB0E73 /* RegisterationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3FB890227F783E00DB0E73 /* RegisterationController.swift */; };
+		0E3FB893227F7A1600DB0E73 /* UITextField+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3FB892227F7A1600DB0E73 /* UITextField+Style.swift */; };
+		0E3FB895227F818000DB0E73 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3FB894227F818000DB0E73 /* UIViewController+Alert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +38,10 @@
 		0E3FB884227F2ABF00DB0E73 /* ApplicationRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationRoute.swift; sourceTree = "<group>"; };
 		0E3FB886227F2B0800DB0E73 /* RegistrationRouteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationRouteModel.swift; sourceTree = "<group>"; };
 		0E3FB888227F322700DB0E73 /* UsersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRepository.swift; sourceTree = "<group>"; };
+		0E3FB88E227F781700DB0E73 /* RegisterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenter.swift; sourceTree = "<group>"; };
+		0E3FB890227F783E00DB0E73 /* RegisterationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterationController.swift; sourceTree = "<group>"; };
+		0E3FB892227F7A1600DB0E73 /* UITextField+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Style.swift"; sourceTree = "<group>"; };
+		0E3FB894227F818000DB0E73 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +116,8 @@
 		0E3FB879227F20E800DB0E73 /* Registration */ = {
 			isa = PBXGroup;
 			children = (
+				0E3FB896227F85D300DB0E73 /* Logic */,
+				0E3FB890227F783E00DB0E73 /* RegisterationController.swift */,
 			);
 			path = Registration;
 			sourceTree = "<group>";
@@ -133,6 +143,8 @@
 			children = (
 				0E3FB888227F322700DB0E73 /* UsersRepository.swift */,
 				0E3FB884227F2ABF00DB0E73 /* ApplicationRoute.swift */,
+				0E3FB892227F7A1600DB0E73 /* UITextField+Style.swift */,
+				0E3FB894227F818000DB0E73 /* UIViewController+Alert.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -142,6 +154,14 @@
 			children = (
 				0E3FB87C227F22B900DB0E73 /* AbstractLoginPresenter.swift */,
 				0E3FB880227F281600DB0E73 /* LoginPresenter.swift */,
+			);
+			path = Logic;
+			sourceTree = "<group>";
+		};
+		0E3FB896227F85D300DB0E73 /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				0E3FB88E227F781700DB0E73 /* RegisterPresenter.swift */,
 			);
 			path = Logic;
 			sourceTree = "<group>";
@@ -217,10 +237,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E3FB88F227F781700DB0E73 /* RegisterPresenter.swift in Sources */,
 				0E3FB889227F322700DB0E73 /* UsersRepository.swift in Sources */,
+				0E3FB895227F818000DB0E73 /* UIViewController+Alert.swift in Sources */,
 				0E3FB862227F13FB00DB0E73 /* LoginController.swift in Sources */,
 				0E3FB887227F2B0800DB0E73 /* RegistrationRouteModel.swift in Sources */,
+				0E3FB891227F783E00DB0E73 /* RegisterationController.swift in Sources */,
 				0E3FB860227F13FB00DB0E73 /* AppDelegate.swift in Sources */,
+				0E3FB893227F7A1600DB0E73 /* UITextField+Style.swift in Sources */,
 				0E3FB885227F2ABF00DB0E73 /* ApplicationRoute.swift in Sources */,
 				0E3FB881227F281600DB0E73 /* LoginPresenter.swift in Sources */,
 				0E3FB87F227F264600DB0E73 /* User.swift in Sources */,
