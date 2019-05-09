@@ -45,7 +45,7 @@ class ContentController: UIViewController, ContentViewProtocol {
                                context: UnsafeMutableRawPointer?) {
         
         if keyPath == "estimatedProgress" {
-            progressView.progress = Float(webView.estimatedProgress)
+            progressView.progress = 0.2 + Float(webView.estimatedProgress) * 0.8
         }
     }
 }
