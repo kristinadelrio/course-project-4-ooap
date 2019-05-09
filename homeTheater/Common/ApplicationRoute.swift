@@ -8,10 +8,6 @@
 
 import UIKit
 
-protocol HomeTheaterPresentable where Self: UIViewController {
-    func set(user: User)
-}
-
 class ApplicationRoute {
     
     enum Route {
@@ -39,7 +35,7 @@ private extension ApplicationRoute {
     
     static func getHomeTheater(user: User) -> UIViewController {
         guard let controller = storyboard.instantiateViewController(
-            withIdentifier: "HomeTheater") as? HomeTheaterPresentable else {
+            withIdentifier: "HomeTheater") as? HomeTheaterController else {
                 fatalError()
         }
         controller.set(user: user)

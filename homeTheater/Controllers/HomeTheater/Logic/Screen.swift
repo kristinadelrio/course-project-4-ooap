@@ -10,6 +10,10 @@ import Foundation
 
 class Screen {
     
-    func up() {}
-    func down() {}
+    func up() {
+        print("Screen up...")
+    }
+    func down() {
+        print("Screen down...")
+    }
 }

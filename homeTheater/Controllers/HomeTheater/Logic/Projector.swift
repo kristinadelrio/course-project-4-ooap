@@ -10,8 +10,12 @@ import Foundation
 
 class Projector {
 
-    func on() { }
-    func off() { }
+    func on() {
+        print("Projector on...")
+    }
+    func off() {
+        print("Projector off...")
+    }
     func tvMode() { }
     func wideScreenMode() { }
 }

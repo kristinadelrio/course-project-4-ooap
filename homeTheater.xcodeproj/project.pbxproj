@@ -14,6 +14,8 @@
 		0E10931F2284983B001542C5 /* MoviesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E10931E2284983B001542C5 /* MoviesRepository.swift */; };
 		0E109321228498C0001542C5 /* SongsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E109320228498C0001542C5 /* SongsRepository.swift */; };
 		0E109323228499DC001542C5 /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E109322228499DC001542C5 /* Content.swift */; };
+		0E10932522849D14001542C5 /* ContentTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E10932422849D14001542C5 /* ContentTableController.swift */; };
+		0E1093272284A2D5001542C5 /* ContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1093262284A2D5001542C5 /* ContentController.swift */; };
 		0E3FB860227F13FB00DB0E73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3FB85F227F13FB00DB0E73 /* AppDelegate.swift */; };
 		0E3FB862227F13FB00DB0E73 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3FB861227F13FB00DB0E73 /* LoginController.swift */; };
 		0E3FB865227F13FB00DB0E73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E3FB863227F13FB00DB0E73 /* Main.storyboard */; };
@@ -30,7 +32,7 @@
 		0E3FB893227F7A1600DB0E73 /* UITextField+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3FB892227F7A1600DB0E73 /* UITextField+Style.swift */; };
 		0E3FB895227F818000DB0E73 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3FB894227F818000DB0E73 /* UIViewController+Alert.swift */; };
 		0E3FB8982284847400DB0E73 /* HomeTheaterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3FB8972284847400DB0E73 /* HomeTheaterController.swift */; };
-		0E3FB89A2284848500DB0E73 /* HomeTheaterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3FB8992284848500DB0E73 /* HomeTheaterPresenter.swift */; };
+		0E3FB89A2284848500DB0E73 /* ContentPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3FB8992284848500DB0E73 /* ContentPresenter.swift */; };
 		0E3FB89E22848EA400DB0E73 /* HomeTheaterFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3FB89D22848EA400DB0E73 /* HomeTheaterFacade.swift */; };
 		0E3FB8A222848F5D00DB0E73 /* Projector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3FB8A122848F5D00DB0E73 /* Projector.swift */; };
 		0E3FB8A422848FAF00DB0E73 /* TheaterLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3FB8A322848FAF00DB0E73 /* TheaterLight.swift */; };
@@ -46,6 +48,8 @@
 		0E10931E2284983B001542C5 /* MoviesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesRepository.swift; sourceTree = "<group>"; };
 		0E109320228498C0001542C5 /* SongsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsRepository.swift; sourceTree = "<group>"; };
 		0E109322228499DC001542C5 /* Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
+		0E10932422849D14001542C5 /* ContentTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTableController.swift; sourceTree = "<group>"; };
+		0E1093262284A2D5001542C5 /* ContentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentController.swift; sourceTree = "<group>"; };
 		0E3FB85C227F13FB00DB0E73 /* homeTheater.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = homeTheater.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E3FB85F227F13FB00DB0E73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0E3FB861227F13FB00DB0E73 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
@@ -64,7 +68,7 @@
 		0E3FB892227F7A1600DB0E73 /* UITextField+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Style.swift"; sourceTree = "<group>"; };
 		0E3FB894227F818000DB0E73 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		0E3FB8972284847400DB0E73 /* HomeTheaterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTheaterController.swift; sourceTree = "<group>"; };
-		0E3FB8992284848500DB0E73 /* HomeTheaterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTheaterPresenter.swift; sourceTree = "<group>"; };
+		0E3FB8992284848500DB0E73 /* ContentPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentPresenter.swift; sourceTree = "<group>"; };
 		0E3FB89D22848EA400DB0E73 /* HomeTheaterFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTheaterFacade.swift; sourceTree = "<group>"; };
 		0E3FB8A122848F5D00DB0E73 /* Projector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Projector.swift; sourceTree = "<group>"; };
 		0E3FB8A322848FAF00DB0E73 /* TheaterLight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterLight.swift; sourceTree = "<group>"; };
@@ -166,7 +170,9 @@
 			children = (
 				0E3FB89C22848CEF00DB0E73 /* Logic */,
 				0E3FB8972284847400DB0E73 /* HomeTheaterController.swift */,
-				0E3FB8992284848500DB0E73 /* HomeTheaterPresenter.swift */,
+				0E3FB8992284848500DB0E73 /* ContentPresenter.swift */,
+				0E10932422849D14001542C5 /* ContentTableController.swift */,
+				0E1093262284A2D5001542C5 /* ContentController.swift */,
 			);
 			path = HomeTheater;
 			sourceTree = "<group>";
@@ -284,9 +290,10 @@
 				0E3FB862227F13FB00DB0E73 /* LoginController.swift in Sources */,
 				0E3FB887227F2B0800DB0E73 /* RegisterRouteModel.swift in Sources */,
 				0E3FB8A62284900B00DB0E73 /* PopcornPopper.swift in Sources */,
+				0E1093272284A2D5001542C5 /* ContentController.swift in Sources */,
 				0E3FB8A82284903300DB0E73 /* Screen.swift in Sources */,
 				0E3FB89E22848EA400DB0E73 /* HomeTheaterFacade.swift in Sources */,
-				0E3FB89A2284848500DB0E73 /* HomeTheaterPresenter.swift in Sources */,
+				0E3FB89A2284848500DB0E73 /* ContentPresenter.swift in Sources */,
 				0E3FB891227F783E00DB0E73 /* RegisterationController.swift in Sources */,
 				0E3FB860227F13FB00DB0E73 /* AppDelegate.swift in Sources */,
 				0E10931422849146001542C5 /* CdPlayer.swift in Sources */,
@@ -294,6 +301,7 @@
 				0E3FB893227F7A1600DB0E73 /* UITextField+Style.swift in Sources */,
 				0E3FB885227F2ABF00DB0E73 /* ApplicationRoute.swift in Sources */,
 				0E3FB881227F281600DB0E73 /* LoginPresenter.swift in Sources */,
+				0E10932522849D14001542C5 /* ContentTableController.swift in Sources */,
 				0E3FB8982284847400DB0E73 /* HomeTheaterController.swift in Sources */,
 				0E3FB87F227F264600DB0E73 /* User.swift in Sources */,
 				0E3FB87D227F22B900DB0E73 /* AbstractLoginPresenter.swift in Sources */,

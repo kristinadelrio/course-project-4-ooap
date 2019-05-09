@@ -17,12 +17,35 @@ class Amplifier {
     private var dvd: DVD?
     private var cd: CD?
     
-    func on() {}
-    func off() {}
-    func set(cd: CD) {}
-    func set(dvd: DVD) {}
-    func setStereoSound() {}
-    func setSurroundSound() {}
-    func set(tuner: Tuner) {}
-    func set(volume: Int) {}
+    func on() {
+        print("Amplifier on...")
+    }
+    
+    func off() {
+        print("Amplifier off...")
+    }
+    
+    func set(cd: CD) {
+        print("Amplifier setiing cd...")
+    }
+    
+    func set(dvd: DVD) {
+        print("Amplifier setting dvd...")
+    }
+    
+    func setStereoSound() {
+        print("Amplifier setting stereo sound...")
+    }
+    
+    func setSurroundSound() {
+        print("Amplifier setting surround sound...")
+    }
+    
+    func set(tuner: Tuner) {
+        print("Amplifier setting tunner...")
+    }
+    
+    func set(volume: Int) {
+        print("Amplifier setting volume...")
+    }
 }

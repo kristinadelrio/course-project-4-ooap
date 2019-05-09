@@ -41,7 +41,7 @@ class HomeTheaterFacade {
         self.poppper = poppper
     }
     
-    func watch(movie: Movie) {
+    func watch(movie: Movie, completion: (() -> Void)?) {
         print("Getting ready to watching movie...")
         poppper.on()
         poppper.pop()
@@ -53,9 +53,10 @@ class HomeTheaterFacade {
         amp.set(volume: 5)
         dvd.on()
         dvd.play(movie: movie)
+        completion?()
     }
     
-    func endMovie() {
+    func endMovie(completion: (() -> Void)?) {
         print("Shutting movie theater down...")
         poppper.off()
         lights.on()
@@ -65,13 +66,15 @@ class HomeTheaterFacade {
         dvd.stop()
         dvd.eject()
         dvd.off()
+        completion?()
     }
     
-    func listenToCd(song: Song) {
+    func listenToCd(song: Song, completion: (() -> Void)?) {
         amp.set(cd: cd)
         amp.setStereoSound()
         cd.on()
         cd.play(song: song)
+        completion?()
         
     }
     

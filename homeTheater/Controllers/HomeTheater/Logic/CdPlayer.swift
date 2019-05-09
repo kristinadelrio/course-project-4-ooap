@@ -10,10 +10,20 @@ import Foundation
 
 class CdPlayer {
     
-    func on() {}
-    func off() {}
-    func eject() {}
+    func on() {
+        print("CdPlayer on...")
+    }
+    func off() {
+        print("CdPlayer off...")
+    }
+    func eject() {
+        print("CdPlayer eject...")
+    }
     func pause() {}
-    func play(song: Song) {}
-    func stop() {}
+    func play(song: Song) {
+        print("CdPlayer play song...")
+    }
+    func stop() {
+        print("CdPlayer stop...")
+    }
 }

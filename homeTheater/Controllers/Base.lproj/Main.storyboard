@@ -335,56 +335,77 @@
                     <connections>
                         <outlet property="movieButton" destination="kmA-ZU-xxX" id="DTc-we-nNt"/>
                         <outlet property="musicButton" destination="HRP-PD-PFQ" id="RuS-0h-fus"/>
-                        <outlet property="onListenToMusic" destination="HRP-PD-PFQ" id="fQS-bO-Yad"/>
-                        <segue destination="xhJ-wZ-6dY" kind="showDetail" identifier="ShowList" id="FlN-CK-LAd"/>
+                        <segue destination="xhJ-wZ-6dY" kind="show" identifier="ShowList" id="FlN-CK-LAd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3aK-Iz-0Ft" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1751" y="98"/>
         </scene>
-        <!--View Controller-->
+        <!--Content Controller-->
         <scene sceneID="nWW-u5-IlC">
             <objects>
-                <viewController storyboardIdentifier="ContentDetailsController" id="ZSE-S8-WNU" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ContentDetailsController" id="ZSE-S8-WNU" customClass="ContentController" customModule="homeTheater" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lXL-tj-PGt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="tbE-LP-XvL">
+                                <rect key="frame" x="0.0" y="44" width="375" height="8"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="8" id="Shw-sX-py2"/>
+                                </constraints>
+                            </progressView>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9A9-Dm-LaJ">
-                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="0.0" y="52" width="375" height="726"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" audio="YES" video="YES"/>
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
                         </subviews>
                         <color key="backgroundColor" red="0.95448105569999997" green="0.95448105569999997" blue="0.95448105569999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="tbE-LP-XvL" firstAttribute="top" secondItem="tTS-Cf-Bxw" secondAttribute="top" id="0xv-DK-KkD"/>
+                            <constraint firstItem="tTS-Cf-Bxw" firstAttribute="trailing" secondItem="tbE-LP-XvL" secondAttribute="trailing" id="1Nd-qc-drE"/>
                             <constraint firstItem="9A9-Dm-LaJ" firstAttribute="leading" secondItem="tTS-Cf-Bxw" secondAttribute="leading" id="YCb-s7-Jp8"/>
+                            <constraint firstItem="tbE-LP-XvL" firstAttribute="leading" secondItem="tTS-Cf-Bxw" secondAttribute="leading" id="bQN-mC-QhD"/>
                             <constraint firstItem="tTS-Cf-Bxw" firstAttribute="trailing" secondItem="9A9-Dm-LaJ" secondAttribute="trailing" id="ttJ-zG-2zx"/>
-                            <constraint firstItem="9A9-Dm-LaJ" firstAttribute="top" secondItem="tTS-Cf-Bxw" secondAttribute="top" id="uT3-a2-eyE"/>
+                            <constraint firstItem="9A9-Dm-LaJ" firstAttribute="top" secondItem="tbE-LP-XvL" secondAttribute="bottom" id="uT3-a2-eyE"/>
                             <constraint firstItem="tTS-Cf-Bxw" firstAttribute="bottom" secondItem="9A9-Dm-LaJ" secondAttribute="bottom" id="xOj-aW-9r4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tTS-Cf-Bxw"/>
                     </view>
+                    <connections>
+                        <outlet property="progressView" destination="tbE-LP-XvL" id="nvm-Mv-cV6"/>
+                        <outlet property="webView" destination="9A9-Dm-LaJ" id="QeJ-7A-faU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Ns-ZL-wzv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3545" y="98"/>
+            <point key="canvasLocation" x="3544.8000000000002" y="97.536945812807886"/>
         </scene>
-        <!--View Controller-->
+        <!--Content Table Controller-->
         <scene sceneID="Qjt-aN-Pjb">
             <objects>
-                <viewController storyboardIdentifier="FilmsTable" id="xhJ-wZ-6dY" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FilmsTable" id="xhJ-wZ-6dY" customClass="ContentTableController" customModule="homeTheater" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SHh-in-Op3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.20000000298023224" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vector" translatesAutoresizingMaskIntoConstraints="NO" id="zuK-gQ-3Vx">
+                                <rect key="frame" x="0.0" y="531" width="375" height="281"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.20000000298023224" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="signs" translatesAutoresizingMaskIntoConstraints="NO" id="f5t-tX-v3x">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="uog-E7-jjS"/>
+                                </constraints>
+                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iGy-wC-Cfc">
                                 <rect key="frame" x="0.0" y="44" width="375" height="734"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ContentCell" textLabel="m6s-UL-lgd" style="IBUITableViewCellStyleDefault" id="okd-V4-KiU">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
@@ -393,15 +414,16 @@
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="m6s-UL-lgd">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="m6s-UL-lgd">
                                                     <rect key="frame" x="15" y="0.0" width="325" height="43.666666666666664"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
+                                                    <color key="textColor" red="0.13537302200000001" green="0.2481238711" blue="0.40493442359999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -412,15 +434,22 @@
                         </subviews>
                         <color key="backgroundColor" red="0.95448105569999997" green="0.95448105569999997" blue="0.95448105569999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="zuK-gQ-3Vx" secondAttribute="bottom" id="Gmy-bD-eg8"/>
+                            <constraint firstItem="zuK-gQ-3Vx" firstAttribute="leading" secondItem="ZP5-8H-I6Y" secondAttribute="leading" id="Gxs-ZL-wzO"/>
                             <constraint firstItem="iGy-wC-Cfc" firstAttribute="top" secondItem="ZP5-8H-I6Y" secondAttribute="top" id="Pbz-St-cNb"/>
                             <constraint firstItem="iGy-wC-Cfc" firstAttribute="leading" secondItem="ZP5-8H-I6Y" secondAttribute="leading" id="Tsk-3a-oWe"/>
+                            <constraint firstItem="f5t-tX-v3x" firstAttribute="leading" secondItem="ZP5-8H-I6Y" secondAttribute="leading" id="UDl-IA-I5B"/>
+                            <constraint firstItem="f5t-tX-v3x" firstAttribute="top" secondItem="SHh-in-Op3" secondAttribute="top" id="UvL-B0-4rb"/>
                             <constraint firstItem="ZP5-8H-I6Y" firstAttribute="bottom" secondItem="iGy-wC-Cfc" secondAttribute="bottom" id="Vki-Wi-mBs"/>
                             <constraint firstItem="ZP5-8H-I6Y" firstAttribute="trailing" secondItem="iGy-wC-Cfc" secondAttribute="trailing" id="b0u-7Z-afw"/>
+                            <constraint firstItem="zuK-gQ-3Vx" firstAttribute="trailing" secondItem="ZP5-8H-I6Y" secondAttribute="trailing" id="c1w-hg-Tyf"/>
+                            <constraint firstItem="f5t-tX-v3x" firstAttribute="trailing" secondItem="ZP5-8H-I6Y" secondAttribute="trailing" id="cIm-H7-ZeT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZP5-8H-I6Y"/>
                     </view>
                     <connections>
-                        <segue destination="ZSE-S8-WNU" kind="presentation" identifier="ShowItem" id="qBV-3x-Vip"/>
+                        <outlet property="tableView" destination="iGy-wC-Cfc" id="hqY-bJ-sKh"/>
+                        <segue destination="ZSE-S8-WNU" kind="show" identifier="ShowContent" id="qBV-3x-Vip"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="reg-ZW-Czk" userLabel="First Responder" sceneMemberID="firstResponder"/>

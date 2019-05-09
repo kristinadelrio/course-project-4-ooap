@@ -8,20 +8,38 @@
 
 import UIKit
 
-class HomeTheaterController: UIViewController, HomeTheaterContentView {
+class HomeTheaterController: UIViewController {
 
     @IBOutlet weak var movieButton: UIButton!
     @IBOutlet weak var musicButton: UIButton!
     
-    private lazy var presenter: HomeTheaterPresenter = {
-        return HomeTheaterPresenter(contentView: self)
-    }()
+    private var user: User!
+    
+    func set(user: User) {
+        self.user = user
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.isNavigationBarHidden = false
+    }
     
     @IBAction func onListenToMusic(_ sender: Any) {
-        performSegue(withIdentifier: "ShowMovies", sender: ["", "", ""])
+        performSegue(withIdentifier: "ShowList", sender: false)
     }
     
     @IBAction func onWatchMovie(_ sender: Any) {
-        performSegue(withIdentifier: "ListenToMusic", sender: ["", "", ""])
+        performSegue(withIdentifier: "ShowList", sender: true)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let controller = segue.destination as? ContentTableController {
+            controller.isVideoContent = (sender as! Bool)
+        }
     }
 }

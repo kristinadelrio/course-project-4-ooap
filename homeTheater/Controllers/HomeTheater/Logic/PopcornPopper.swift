@@ -11,14 +11,14 @@ import Foundation
 class PopcornPopper {
     
     func on() {
-        
+        print("PopcornPopper on...")
     }
     
     func off() {
-        
+        print("PopcornPopper off...")
     }
     
     func pop() {
-        
+        print("PopcornPopper pop...")
     }
 }

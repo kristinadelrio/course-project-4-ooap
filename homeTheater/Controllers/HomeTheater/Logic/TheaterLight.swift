@@ -11,14 +11,14 @@ import Foundation
 class TheaterLight {
     
     func on() {
-        
+        print("TheaterLight on...")
     }
     
     func dim(_ value: Int) {
-        
+        print("TheaterLight dim - \(value)...")
     }
     
     func off() {
-        
+        print("TheaterLight off...")
     }
 }
