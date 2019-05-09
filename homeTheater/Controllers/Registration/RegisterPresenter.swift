@@ -9,10 +9,11 @@
 import UIKit
 
 protocol RegisterationContentView: class {
-    func update(with model: RegistrationRouteModel, animated: Bool)
-    func popToLoginPage()
+    func update(with model: RegisterRouteModel, animated: Bool)
+    func setSuccessfulRegState()
     func setDataDidNotMatchState()
     func setUserEmptyDataState()
+    func setUndefinedErrorState()
     func setUserAlreadyExistState()
 }
 
@@ -21,15 +22,15 @@ class RegisterationPresenter {
     private unowned let contentView: RegisterationContentView
     private var currentIndex = 0
     private let models = [
-        RegistrationRouteModel(title: "What is your name?",
+        RegisterRouteModel(title: "What is your name?",
                                isPassword: false,
                                placeholder: "Name",
                                image: UIImage(named: "name")!),
-        RegistrationRouteModel(title: "Enter your email",
+        RegisterRouteModel(title: "Enter your email",
                                isPassword: false,
                                placeholder: "Email",
                                image: UIImage(named: "email")!),
-        RegistrationRouteModel(title: "Please, come up with a password",
+        RegisterRouteModel(title: "Please, come up with a password",
                                isPassword: true,
                                placeholder: "Password",
                                image: UIImage(named: "password")!)
@@ -71,8 +72,12 @@ class RegisterationPresenter {
         }
         
         if currentIndex == 2 {
-            // TODO: saveUser!
-            contentView.popToLoginPage()
+            if let user = user {
+                UserRepository.save(user: user)
+                contentView.setSuccessfulRegState()
+            } else {
+                contentView.setUndefinedErrorState()
+            }
         } else {
             currentIndex += 1
             contentView.update(with: models[currentIndex], animated: true)

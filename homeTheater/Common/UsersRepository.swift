@@ -19,4 +19,8 @@ class UserRepository {
     static func getUser(by email: String) -> User? {
         return users.first(where: { $0.email == email })
     }
+    
+    static func save(user: User) {
+        // TODO:
+    }
 }

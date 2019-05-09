@@ -1,5 +1,5 @@
 //
-//  RegistrationRouteModel.swift
+//  RegisterRouteModel.swift
 //  homeTheater
 //
 //  Created by Kristina Del Rio Albrechet on 5/5/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct RegistrationRouteModel {
+struct RegisterRouteModel {
     let title: String
     let isPassword: Bool
     let placeholder: String

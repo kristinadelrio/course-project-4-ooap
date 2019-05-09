@@ -267,12 +267,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YGJ-Jz-gyo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="961" y="98"/>
+            <point key="canvasLocation" x="943" y="98"/>
         </scene>
-        <!--View Controller-->
+        <!--Home Theater Controller-->
         <scene sceneID="AF3-F8-tLL">
             <objects>
-                <viewController storyboardIdentifier="HomeTheater" id="NUB-9l-C4w" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeTheater" id="NUB-9l-C4w" customClass="HomeTheaterController" customModule="homeTheater" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qP0-63-Es4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -281,7 +281,7 @@
                                 <rect key="frame" x="0.0" y="527.66666666666663" width="375" height="284.33333333333337"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="U1p-rJ-KcY">
-                                <rect key="frame" x="47" y="320" width="281" height="172"/>
+                                <rect key="frame" x="47" y="352" width="281" height="108"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kmA-ZU-xxX">
                                         <rect key="frame" x="0.0" y="0.0" width="281" height="44"/>
@@ -293,6 +293,9 @@
                                         <state key="normal" title="Watch movie">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onWatchMovie:" destination="NUB-9l-C4w" eventType="touchUpInside" id="Pnc-ha-MJg"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HRP-PD-PFQ">
                                         <rect key="frame" x="0.0" y="64" width="281" height="44"/>
@@ -301,14 +304,9 @@
                                         <state key="normal" title="Listen to music">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Px-6s-txc">
-                                        <rect key="frame" x="0.0" y="128" width="281" height="44"/>
-                                        <color key="backgroundColor" red="0.13537302200000001" green="0.2481238711" blue="0.40493442359999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
-                                        <state key="normal" title="Listen to radio">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
+                                        <connections>
+                                            <action selector="onListenToMusic:" destination="NUB-9l-C4w" eventType="touchUpInside" id="oHb-zr-ANa"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -334,10 +332,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LsD-gt-br0"/>
                     </view>
+                    <connections>
+                        <outlet property="movieButton" destination="kmA-ZU-xxX" id="DTc-we-nNt"/>
+                        <outlet property="musicButton" destination="HRP-PD-PFQ" id="RuS-0h-fus"/>
+                        <outlet property="onListenToMusic" destination="HRP-PD-PFQ" id="fQS-bO-Yad"/>
+                        <segue destination="xhJ-wZ-6dY" kind="showDetail" identifier="ShowList" id="FlN-CK-LAd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3aK-Iz-0Ft" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1740.5797101449277" y="97.767857142857139"/>
+            <point key="canvasLocation" x="1751" y="98"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="nWW-u5-IlC">
@@ -368,7 +372,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Ns-ZL-wzv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3236" y="98"/>
+            <point key="canvasLocation" x="3545" y="98"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Qjt-aN-Pjb">
@@ -415,10 +419,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZP5-8H-I6Y"/>
                     </view>
+                    <connections>
+                        <segue destination="ZSE-S8-WNU" kind="presentation" identifier="ShowItem" id="qBV-3x-Vip"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="reg-ZW-Czk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2485.507246376812" y="97.767857142857139"/>
+            <point key="canvasLocation" x="2609" y="98"/>
         </scene>
     </scenes>
     <resources>

@@ -89,7 +89,7 @@ private extension RegisterationController {
         additionalTextField.clear()
     }
     
-    func set(model: RegistrationRouteModel) {
+    func set(model: RegisterRouteModel) {
         titleLabel.text = model.title
         additionalTextField.isHidden = !model.isPassword
         imageView.image = model.image
@@ -102,6 +102,14 @@ private extension RegisterationController {
 
 extension RegisterationController: RegisterationContentView {
     
+    func setSuccessfulRegState() {
+        showAlert("Success",
+                  with: "Registration successful! Please, loggin now!",
+                  completion: { [weak self] in
+            self?.popToLoginPage()
+        })
+    }
+
     func setDataDidNotMatchState() {
         mainTextField.setBorder(with: .red)
         additionalTextField.setBorder(with: .red)
@@ -122,21 +130,25 @@ extension RegisterationController: RegisterationContentView {
         showAlert(with: "User with such email has been already registered! Please, try another one!")
     }
     
+    func setUndefinedErrorState() {
+        showAlert(with: "Something went wrong! Please, try again later!")
+    }
+    
     func popToLoginPage() {
         navigationController?.popToRootViewController(animated: true)
     }
     
-    func update(with model: RegistrationRouteModel, animated: Bool) {
+    func update(with model: RegisterRouteModel, animated: Bool) {
         guard animated else {
             set(model: model)
             return
         }
         
-        UIView.animate(withDuration: 1, animations: {
+        UIView.animate(withDuration: 0.5, animations: {
             self.view.subviews.forEach({ $0.alpha = 0 })
         }) { _ in
             self.set(model: model)
-            UIView.animate(withDuration: 1) {
+            UIView.animate(withDuration: 0.5) {
                 self.view.subviews.forEach({ $0.alpha = 1 })
             }
         }
