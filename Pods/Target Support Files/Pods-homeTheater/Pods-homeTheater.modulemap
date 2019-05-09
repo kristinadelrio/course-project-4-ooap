@@ -1,0 +1,6 @@
+framework module Pods_homeTheater {
+  umbrella header "Pods-homeTheater-umbrella.h"
+
+  export *
+  module * { export * }
+}

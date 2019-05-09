@@ -16,6 +16,7 @@
 		0E109323228499DC001542C5 /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E109322228499DC001542C5 /* Content.swift */; };
 		0E10932522849D14001542C5 /* ContentTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E10932422849D14001542C5 /* ContentTableController.swift */; };
 		0E1093272284A2D5001542C5 /* ContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1093262284A2D5001542C5 /* ContentController.swift */; };
+		0E1093292284B0FB001542C5 /* CusstomHud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1093282284B0FB001542C5 /* CusstomHud.swift */; };
 		0E3FB860227F13FB00DB0E73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3FB85F227F13FB00DB0E73 /* AppDelegate.swift */; };
 		0E3FB862227F13FB00DB0E73 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3FB861227F13FB00DB0E73 /* LoginController.swift */; };
 		0E3FB865227F13FB00DB0E73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E3FB863227F13FB00DB0E73 /* Main.storyboard */; };
@@ -38,9 +39,11 @@
 		0E3FB8A422848FAF00DB0E73 /* TheaterLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3FB8A322848FAF00DB0E73 /* TheaterLight.swift */; };
 		0E3FB8A62284900B00DB0E73 /* PopcornPopper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3FB8A52284900B00DB0E73 /* PopcornPopper.swift */; };
 		0E3FB8A82284903300DB0E73 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3FB8A72284903300DB0E73 /* Screen.swift */; };
+		9177CAB3135F74AA04732064 /* Pods_homeTheater.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AE1DF72B5598A36857BC719 /* Pods_homeTheater.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		061562C2A37D094F33EE7620 /* Pods-homeTheater.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-homeTheater.release.xcconfig"; path = "Pods/Target Support Files/Pods-homeTheater/Pods-homeTheater.release.xcconfig"; sourceTree = "<group>"; };
 		0E10931322849146001542C5 /* CdPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CdPlayer.swift; sourceTree = "<group>"; };
 		0E10931522849162001542C5 /* DvdPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DvdPlayer.swift; sourceTree = "<group>"; };
 		0E10931722849180001542C5 /* Tuner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tuner.swift; sourceTree = "<group>"; };
@@ -50,6 +53,7 @@
 		0E109322228499DC001542C5 /* Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
 		0E10932422849D14001542C5 /* ContentTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTableController.swift; sourceTree = "<group>"; };
 		0E1093262284A2D5001542C5 /* ContentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentController.swift; sourceTree = "<group>"; };
+		0E1093282284B0FB001542C5 /* CusstomHud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CusstomHud.swift; sourceTree = "<group>"; };
 		0E3FB85C227F13FB00DB0E73 /* homeTheater.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = homeTheater.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E3FB85F227F13FB00DB0E73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0E3FB861227F13FB00DB0E73 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
@@ -74,6 +78,8 @@
 		0E3FB8A322848FAF00DB0E73 /* TheaterLight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterLight.swift; sourceTree = "<group>"; };
 		0E3FB8A52284900B00DB0E73 /* PopcornPopper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopcornPopper.swift; sourceTree = "<group>"; };
 		0E3FB8A72284903300DB0E73 /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
+		3EFB6FD7D2DD5986A85B6BE2 /* Pods-homeTheater.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-homeTheater.debug.xcconfig"; path = "Pods/Target Support Files/Pods-homeTheater/Pods-homeTheater.debug.xcconfig"; sourceTree = "<group>"; };
+		7AE1DF72B5598A36857BC719 /* Pods_homeTheater.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_homeTheater.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9177CAB3135F74AA04732064 /* Pods_homeTheater.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +99,8 @@
 			children = (
 				0E3FB85E227F13FB00DB0E73 /* homeTheater */,
 				0E3FB85D227F13FB00DB0E73 /* Products */,
+				70882473197C52FA98D83978 /* Pods */,
+				4D662CCA513D5E36A03F7A20 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -181,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				0E3FB888227F322700DB0E73 /* UsersRepository.swift */,
+				0E1093282284B0FB001542C5 /* CusstomHud.swift */,
 				0E10931E2284983B001542C5 /* MoviesRepository.swift */,
 				0E3FB884227F2ABF00DB0E73 /* ApplicationRoute.swift */,
 				0E3FB892227F7A1600DB0E73 /* UITextField+Style.swift */,
@@ -206,6 +216,23 @@
 			path = Logic;
 			sourceTree = "<group>";
 		};
+		4D662CCA513D5E36A03F7A20 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7AE1DF72B5598A36857BC719 /* Pods_homeTheater.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		70882473197C52FA98D83978 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3EFB6FD7D2DD5986A85B6BE2 /* Pods-homeTheater.debug.xcconfig */,
+				061562C2A37D094F33EE7620 /* Pods-homeTheater.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -213,9 +240,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0E3FB86E227F13FC00DB0E73 /* Build configuration list for PBXNativeTarget "homeTheater" */;
 			buildPhases = (
+				C1F547A35F4A39C4395BC0DB /* [CP] Check Pods Manifest.lock */,
 				0E3FB858227F13FB00DB0E73 /* Sources */,
 				0E3FB859227F13FB00DB0E73 /* Frameworks */,
 				0E3FB85A227F13FB00DB0E73 /* Resources */,
+				59B078CF34B746BC0FF4A161 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -272,6 +301,53 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		59B078CF34B746BC0FF4A161 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-homeTheater/Pods-homeTheater-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-homeTheater/Pods-homeTheater-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C1F547A35F4A39C4395BC0DB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-homeTheater-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0E3FB858227F13FB00DB0E73 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -286,6 +362,7 @@
 				0E10931622849162001542C5 /* DvdPlayer.swift in Sources */,
 				0E109323228499DC001542C5 /* Content.swift in Sources */,
 				0E3FB895227F818000DB0E73 /* UIViewController+Alert.swift in Sources */,
+				0E1093292284B0FB001542C5 /* CusstomHud.swift in Sources */,
 				0E10931822849180001542C5 /* Tuner.swift in Sources */,
 				0E3FB862227F13FB00DB0E73 /* LoginController.swift in Sources */,
 				0E3FB887227F2B0800DB0E73 /* RegisterRouteModel.swift in Sources */,
@@ -448,6 +525,7 @@
 		};
 		0E3FB86F227F13FC00DB0E73 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3EFB6FD7D2DD5986A85B6BE2 /* Pods-homeTheater.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -466,6 +544,7 @@
 		};
 		0E3FB870227F13FC00DB0E73 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 061562C2A37D094F33EE7620 /* Pods-homeTheater.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

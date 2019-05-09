@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import MBProgressHUD
 
 enum LoginError: Error {
     case wrongPassword
@@ -24,8 +25,12 @@ protocol AbstractLoginPresenter: class {
 extension AbstractLoginPresenter {
     
     func logIn(email: String, password: String) {
-        authentify(email: email, password: password) { [weak self] (result) in
-            self?.notify(with: result)
+        DispatchQueue.global().asyncAfter(deadline: .now() + 3) { [weak self] in
+            self?.authentify(email: email, password: password) { (result) in
+                DispatchQueue.main.async {
+                    self?.notify(with: result)
+                }
+            }
         }
     }
 }

@@ -15,6 +15,8 @@ protocol RegisterationContentView: class {
     func setUserEmptyDataState()
     func setUndefinedErrorState()
     func setUserAlreadyExistState()
+    func showHud()
+    func hideHud()
 }
 
 class RegisterationPresenter {
@@ -72,12 +74,14 @@ class RegisterationPresenter {
         }
         
         if currentIndex == 2 {
+            contentView.showHud()
             if let user = user {
                 UserRepository.save(user: user)
                 contentView.setSuccessfulRegState()
             } else {
                 contentView.setUndefinedErrorState()
             }
+            contentView.hideHud()
         } else {
             currentIndex += 1
             contentView.update(with: models[currentIndex], animated: true)

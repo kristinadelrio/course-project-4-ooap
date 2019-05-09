@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 class RegisterationController: UIViewController {
 
@@ -101,6 +102,14 @@ private extension RegisterationController {
 }
 
 extension RegisterationController: RegisterationContentView {
+    
+    func showHud() {
+        MBProgressHUD.showAnimated(onView: view)
+    }
+    
+    func hideHud() {
+        MBProgressHUD.hideAnimated(forView: view)
+    }
     
     func setSuccessfulRegState() {
         showAlert("Success",

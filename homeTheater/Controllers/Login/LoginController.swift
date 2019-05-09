@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 protocol LoginContentView: class {
+    func showHud()
+    func hideHud()
     func setDefaultState()
     func setEmptyFieldsState()
     func setWrongPasswordState()
@@ -48,6 +51,7 @@ class LoginController: UIViewController {
     }
     
     @IBAction func onlogInDidTap(_ sender: UIButton) {
+        showHud()
         presenter.logIn(email: usernameField.text ?? "",
                         password: passwordField.text ?? "")
     }
@@ -96,6 +100,14 @@ extension LoginController {
 }
 
 extension LoginController: LoginContentView {
+    
+    func showHud() {
+        MBProgressHUD.showAnimated(onView: view)
+    }
+    
+    func hideHud() {
+        MBProgressHUD.hideAnimated(forView: view)
+    }
     
     func setDefaultState() {
         usernameField.setBorder()
