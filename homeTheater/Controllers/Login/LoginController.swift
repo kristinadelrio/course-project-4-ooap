@@ -10,8 +10,6 @@ import UIKit
 import MBProgressHUD
 
 protocol LoginContentView: class {
-    func showHud()
-    func hideHud()
     func setDefaultState()
     func setEmptyFieldsState()
     func setWrongPasswordState()
@@ -51,7 +49,7 @@ class LoginController: UIViewController {
     }
     
     @IBAction func onlogInDidTap(_ sender: UIButton) {
-        showHud()
+        MBProgressHUD.showAnimated(onView: view)
         presenter.logIn(email: usernameField.text ?? "",
                         password: passwordField.text ?? "")
     }
@@ -101,15 +99,8 @@ extension LoginController {
 
 extension LoginController: LoginContentView {
     
-    func showHud() {
-        MBProgressHUD.showAnimated(onView: view)
-    }
-    
-    func hideHud() {
-        MBProgressHUD.hideAnimated(forView: view)
-    }
-    
     func setDefaultState() {
+        MBProgressHUD.hideAnimated(forView: view)
         usernameField.setBorder()
         passwordField.setBorder()
         usernameField.clear()
@@ -117,12 +108,14 @@ extension LoginController: LoginContentView {
     }
     
     func setWrongPasswordState() {
+        MBProgressHUD.hideAnimated(forView: view)
         usernameField.setBorder()
         passwordField.setBorder(with: .red)
         showAlert(with: "Password didn't match. Please, try again!")
     }
     
     func setunregisteredUserState() {
+        MBProgressHUD.hideAnimated(forView: view)
         usernameField.setBorder(with: .red)
         passwordField.setBorder()
         passwordField.clear()
@@ -130,12 +123,14 @@ extension LoginController: LoginContentView {
     }
     
     func setEmptyFieldsState() {
+        MBProgressHUD.hideAnimated(forView: view)
         if passwordField.text == "" { passwordField.setBorder(with: .red) }
         if usernameField.text == "" { usernameField.setBorder(with: .red) }
         showAlert(with: "Fields cannot be empty! Please, enter email and password!")
     }
     
     func navigate(to controller: UIViewController) {
+        MBProgressHUD.hideAnimated(forView: view)
         navigationController?.pushViewController(controller, animated: true)
     }
 }
